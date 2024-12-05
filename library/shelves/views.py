@@ -43,13 +43,15 @@ def row(request, lib_id, shelf_id, row_id):
     libraries = Library.objects.all()
     library = libraries.get(pk=lib_id)
     shelf = Shelf.objects.get(pk=shelf_id)
-    row = Shelf.objects.get(pk=row_id)
+    rows = Row.objects.filter(shelf=shelf)
+    row = Row.objects.get(pk=row_id)
     books = Book.objects.filter(row=row)
 
     context = {
         "libraries": libraries,
         "library": library,
         "shelf": shelf,
+        "rows": rows,
         "row": row,
         "books": books,
     }

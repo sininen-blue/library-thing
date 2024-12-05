@@ -1,5 +1,23 @@
 {% extends "shelves/base.html" %}
-{% block title %}title name here{% endblock %}
+{% block title %}{{ library.title }}{% endblock %}
 
 {% block content %}
+
+<div class="library-title">
+    {% if row %}
+        <h1>Shelf {{ shelf.number }} Row {{ row.number }}</h1>
+    {% else %}
+        <h1>Shelf {{ shelf.number }}</h1>
+    {% endif %}
+</div>
+
+<nav class="shelf-nav">
+{% for row in rows %}
+    <a href="{% url 'shelves:row' library.id shelf.id row.id %}">Row {{ row.number }}</a>
+{% endfor %}
+</nav>
+
+{% if row %}
+    <p>test</p>
+{% endif %}
 {% endblock %}
