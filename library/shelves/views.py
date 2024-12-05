@@ -6,7 +6,10 @@ def index(request):
 
 
 def library(request, lib_name):
-    return render(request, "shelves/library.html")
+    content = {
+        "lib_name": lib_name.title(),
+    }
+    return render(request, "shelves/library.html", content)
 
 
 def shelf(request, lib_name, shelf):
