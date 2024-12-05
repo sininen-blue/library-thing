@@ -11,12 +11,12 @@ class Library(models.Model):
 class Shelf(models.Model):
     library = models.ForeignKey(Library, on_delete=models.CASCADE)
     number = models.IntegerField(default=0)
-    title = models.CharField(max_length=200, default="")
+    title = models.CharField(max_length=200, default="None")
 
 
 class Book(models.Model):
     shelf = models.ForeignKey(Shelf, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    author = models.CharField(max_length=200)
-    call_number = models.CharField(max_length=200)
-    barcode = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, default="None")
+    author = models.CharField(max_length=200, default="None")
+    call_number = models.CharField(max_length=200, default="None")
+    barcode = models.CharField(max_length=200, default="None")

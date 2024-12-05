@@ -17,9 +17,9 @@
             <nav>
                 <a class="logo" href="{% url 'shelves:index' %}">ShelfTech</a>
                 <div class="right">
-                    <a href="{% url 'shelves:library' 'tangelder'%}">Tangelder Library</a>
-                    <a href="{% url 'shelves:library' 'noguchi'%}">Noguchi Library</a>
-                    <a href="{% url 'shelves:library' 'basic_ed'%}">Basic Education Library</a>
+                    {% for library in libraries %}
+                        <a href="{% url 'shelves:library' library.id %}">{{ library.title }}</a>
+                    {% endfor %}
                     <a href="#">FAQ</a>
                     <a href="#">Search</a>
                 </div>

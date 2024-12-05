@@ -5,7 +5,7 @@ from . import views
 app_name = "shelves"
 urlpatterns = [
     path("", views.index, name="index"),
-    path("lib/<str:lib_name>", views.library, name="library"),
-    path("lib/<str:lib_name>/<int:shelf>", views.shelf, name="shelf"),
-    path("lib/<str:lib_name>/<int:shelf>/<int:row>", views.row, name="row"),
+    path("lib/<int:lib_id>", views.library, name="library"),
+    path("lib/<int:lib_id>/<int:shelf>", views.shelf, name="shelf"),
+    path("lib/<int:lib_id>/<int:shelf>/<int:row>", views.row, name="row"),
 ]

@@ -11,7 +11,7 @@ nav {
 	background: var(--white);
 }
 
-nav > div.right {
+nav>div.right {
 	margin-left: auto;
 }
 
@@ -29,7 +29,7 @@ footer {
 	color: var(--white);
 }
 
-footer > div {
+footer>div {
 	margin-inline: auto;
 }
 
@@ -58,4 +58,22 @@ footer > div {
 .welcome p {
 	font-size: 1.125rem;
 	line-height: 1.75rem;
+}
+
+/*---*/
+.library-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 8rem;
+
+	color: var(--white);
+}
+
+.shelf-nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	height: 3rem;
 }
