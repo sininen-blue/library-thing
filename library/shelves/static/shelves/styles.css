@@ -1,0 +1,79 @@
+:root {
+	--white: #ffffff;
+	--blue: #0c71c3;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	height: 6rem;
+
+	background: var(--white);
+}
+
+nav>div.right {
+	margin-left: auto;
+}
+
+main {
+	height: 100%;
+	background: var(--blue);
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	height: 8rem;
+
+	background: var(--blue);
+	color: var(--white);
+}
+
+footer>div {
+	margin-inline: auto;
+}
+
+/*---*/
+
+.welcome {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+
+	color: var(--white);
+
+	margin-inline: auto;
+	height: 14rem;
+	width: 24rem;
+}
+
+.welcome h1 {
+	font-size: 2.25rem;
+	line-height: 4.5rem;
+}
+
+.welcome p {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+
+/*---*/
+.library-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 8rem;
+
+	color: var(--white);
+}
+
+.shelf-nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	height: 3rem;
+}

@@ -15,12 +15,14 @@
     <body>
         <header>
             <nav>
-                <a href="#">ShelfTech</a>
-                <a href="#">Tangelder Library</a>
-                <a href="#">Noguchi Library</a>
-                <a href="#">Basic Education Library</a>
-                <a href="#">FAQ</a>
-                <a href="#">Search</a>
+                <a class="logo" href="{% url 'shelves:index' %}">ShelfTech</a>
+                <div class="right">
+                    {% for library in libraries %}
+                        <a href="{% url 'shelves:library' library.id %}">{{ library.title }}</a>
+                    {% endfor %}
+                    <a href="#">FAQ</a>
+                    <a href="#">Search</a>
+                </div>
             </nav>
         </header>
 
@@ -29,7 +31,18 @@
         </main>
 
         <footer>
-            <p>arst</p>
+            <div>
+                <h1>ShelfTeck</h1>
+            </div>
+            <div>
+                <h2>Contact Us</h2>
+                <p>Tel Nos: +63 (9461581024)</p>
+                <p>Email: fsuulrc@urios.edu.ph</p>
+            </div>
+            <div>
+                <h2>About Us</h2>
+                <p>History</p>
+            </div>
         </footer>
     </body>
 </html>

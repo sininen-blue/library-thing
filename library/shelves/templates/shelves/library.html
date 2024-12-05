@@ -1,0 +1,15 @@
+{% extends "shelves/base.html" %}
+{% block title %}{{ library.title }}{% endblock %}
+
+{% block content %}
+<div class="library-title">
+    <h1>{{ library.title }}</h1>
+</div>
+
+<nav class="shelf-nav">
+{% for shelf in shelves %}
+    <a href="{% url 'shelves:shelf' library.id shelf.id %}">Shelf {{ shelf.number }}</a>
+{% endfor %}
+</nav>
+
+{% endblock %}
