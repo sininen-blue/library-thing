@@ -14,8 +14,13 @@ class Shelf(models.Model):
     title = models.CharField(max_length=200, default="None")
 
 
-class Book(models.Model):
+class Row(models.Model):
     shelf = models.ForeignKey(Shelf, on_delete=models.CASCADE)
+
+
+class Book(models.Model):
+    row = models.ForeignKey(Row, on_delete=models.SET_NULL, null=True)
+
     title = models.CharField(max_length=200, default="None")
     author = models.CharField(max_length=200, default="None")
     call_number = models.CharField(max_length=200, default="None")

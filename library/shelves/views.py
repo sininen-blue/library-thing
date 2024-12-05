@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Library, Shelf, Book
+from .models import Library, Shelf, Row, Book
 
 
 def index(request):
@@ -24,9 +24,33 @@ def library(request, lib_id):
     return render(request, "shelves/library.html", context)
 
 
-def shelf(request, lib_id, shelf):
-    return render(request, "shelves/shelf.html")
+def shelf(request, lib_id, shelf_id):
+    libraries = Library.objects.all()
+    library = libraries.get(pk=lib_id)
+    shelf = Shelf.objects.get(pk=shelf_id)
+    rows = Row.objects.filter(shelf=shelf)
+
+    context = {
+        "libraries": libraries,
+        "library": library,
+        "shelf": shelf,
+        "rows": rows,
+    }
+    return render(request, "shelves/shelf.html", context)
 
 
-def row(request, lib_id, shelf, row):
-    return render(request, "shelves/shelf.html")
+def row(request, lib_id, shelf_id, row_id):
+    libraries = Library.objects.all()
+    library = libraries.get(pk=lib_id)
+    shelf = Shelf.objects.get(pk=shelf_id)
+    row = Shelf.objects.get(pk=row_id)
+    books = Book.objects.filter(row=row)
+
+    context = {
+        "libraries": libraries,
+        "library": library,
+        "shelf": shelf,
+        "row": row,
+        "books": books,
+    }
+    return render(request, "shelves/shelf.html", context)
