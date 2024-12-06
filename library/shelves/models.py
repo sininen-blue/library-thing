@@ -16,7 +16,7 @@ class Shelf(models.Model):
     title = models.CharField(max_length=200, default="None")
 
     def __str__(self):
-        return f"Shelf {self.number} {self.title}"
+        return f"{self.library.title} Shelf {self.number}"
 
 
 class Row(models.Model):
@@ -25,7 +25,7 @@ class Row(models.Model):
     number = models.IntegerField()
 
     def __str__(self):
-        return f"Row {self.number}"
+        return f"Shelf {self.shelf.number} Row {self.number}"
 
 
 class Book(models.Model):
@@ -37,4 +37,4 @@ class Book(models.Model):
     barcode = models.CharField(max_length=200, default="None")
 
     def __str__(self):
-        return f"Row {self.title}"
+        return f"{self.title}"
