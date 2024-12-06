@@ -12,4 +12,14 @@
 {% endfor %}
 </nav>
 
+<section class="library-info">
+    {% load static %}
+    <!--make sure that this library is changed-->
+    <img width="480" height="720" src="{% static 'shelves/images/library-2.jpg' %}" alt="An image of the noguchi library"/>
+    <div class="library-desc">
+        <h2>Welcome to the {{ library.title}} Collection</h2>
+        <p>{{ library.description }}</p>
+    </div>
+</section>
+
 {% endblock %}

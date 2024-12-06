@@ -5,9 +5,7 @@ from .models import Library, Shelf, Row, Book
 def index(request):
     libraries = Library.objects.all()
 
-    context = {
-        "libraries": libraries
-    }
+    context = {"libraries": libraries}
     return render(request, "shelves/index.html", context)
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE>
-<html lang="en">
+<html lang="en" hx-boost="true">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,10 @@
         <meta name="description" content="A library web app">
 
         {% load static %}
-        <link rel="stylesheet" href="{% static 'shelves/base.css' %}">
-        <link rel="stylesheet" href="{% static 'shelves/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'shelves/css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'shelves/css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'shelves/css/flickity.min.css' %}" media="screen">
+        <script src="{% static 'shelves/js/htmx.min.js' %}"></script>
 
         <title>{% block title %}{% endblock %}</title>
     </head>

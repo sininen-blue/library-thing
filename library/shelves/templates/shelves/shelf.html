@@ -2,6 +2,7 @@
 {% block title %}{{ library.title }}{% endblock %}
 
 {% block content %}
+{% load static %}
 
 <div class="library-title">
     {% if row %}
@@ -18,6 +19,25 @@
 </nav>
 
 {% if row %}
-    <p>test</p>
+
+<section class="shelf-gallery js-flickity">
+{% for book in books %}
+    <div class="shelf-cell">
+        <img class="shelf" height="720" width="480" src="{% static 'shelves/images/book-cover-temp.jpg' %}" alt="An image of a shelf"/>
+        <p class="book-details">{{ book.title }}</p>
+    </div>
+{% endfor %}
+</section>
+
+<div class="qr-container">
+    test
+</div>
+
+<script src="{% static 'shelves/js/flickity.pkgd.min.js' %}"></script>
+{% else %}
+
+    <!--TODO: remember to change depending on which shelf-->
+    <img class="shelf" height="720" width="1280" src="{% static 'shelves/images/shelf.jpg' %}" alt="An image of a shelf"/>
+
 {% endif %}
 {% endblock %}
