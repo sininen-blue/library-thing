@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import Library, Shelf, Row, Book
+import base64
+from io import BytesIO
+import qrcode
 
 
 def index(request):
@@ -45,7 +48,17 @@ def row(request, lib_id, shelf_id, row_id):
     row = Row.objects.get(pk=row_id)
     books = Book.objects.filter(row=row)
 
+    qr = qrcode.QRCode()
+    qr.add_data(request.get_host() + request.path)
+    qrImg = qr.make_image(fill_color=(255, 255, 255),
+                          back_color=(12, 113, 195))
+    buffer = BytesIO()
+    qrImg.save(buffer, format="PNG")
+    buffer.seek(0)
+    qr64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
+
     context = {
+        "qr": qr64,
         "libraries": libraries,
         "library": library,
         "shelf": shelf,

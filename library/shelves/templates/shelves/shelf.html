@@ -30,7 +30,7 @@
 </section>
 
 <div class="qr-container">
-    <img height="300" width="300" src="{% static 'shelves/images/qrs/qr.png' %}" alt="A qr code leading to this url"/>
+    <img height="300" width="300" src="data:img/png;base64,{{ qr }}" alt="A qr code leading to this url"/>
 </div>
 
 <script src="{% static 'shelves/js/flickity.pkgd.min.js' %}"></script>
