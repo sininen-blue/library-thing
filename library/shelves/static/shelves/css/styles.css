@@ -1,7 +1,9 @@
 :root {
 	--white: #ffffff;
 	--gray: #dce2e8;
+	--light-blue: #3c98d1;
 	--blue: #0c71c3;
+	--black: #1e1e1e;
 }
 
 nav {
@@ -39,7 +41,34 @@ img {
 	object-fit: cover;
 }
 
+a.button {
+	border-radius: .5rem;
+	padding: .5rem;
+	text-decoration: none;
+
+	color: var(--white);
+	background: var(--blue);
+}
+
+a.button:hover {
+	background: var(--light-blue);
+}
+
 /*---*/
+header nav {
+	padding-inline: 2rem;
+}
+
+.nav {
+	margin-inline: .5rem;
+	font-weight: 400;
+	text-decoration: none;
+	color: var(--black);
+}
+
+.logo {
+	font-weight: 600;
+}
 
 .welcome {
 	display: flex;
@@ -123,6 +152,8 @@ img {
 
 /*---*/
 .shelf-gallery {
+	margin-inline: auto;
+	max-width: 90%;
 	padding: 4rem 0 4rem 0;
 }
 
@@ -165,5 +196,13 @@ img {
 }
 
 .qr-container {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	width: 100%;
 	height: 24rem;
+}
+
+.qr-container img {
+	object-fit: cover;
+	margin-inline: auto;
 }

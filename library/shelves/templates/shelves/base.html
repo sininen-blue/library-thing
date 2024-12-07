@@ -17,13 +17,13 @@
     <body>
         <header>
             <nav>
-                <a class="logo" href="{% url 'shelves:index' %}">ShelfTech</a>
+                <a class="logo nav" href="{% url 'shelves:index' %}">ShelfTech</a>
                 <div class="right">
                     {% for library in libraries %}
-                        <a href="{% url 'shelves:library' library.id %}">{{ library.title }}</a>
+                        <a class="nav" href="{% url 'shelves:library' library.id %}">{{ library.title }}</a>
                     {% endfor %}
-                    <a href="#">FAQ</a>
-                    <a href="#">Search</a>
+                    <a class="nav" href="#">FAQ</a>
+                    <a class="nav" href="#">Search</a>
                 </div>
             </nav>
         </header>

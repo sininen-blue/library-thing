@@ -14,7 +14,7 @@
 
 <nav class="shelf-nav">
 {% for row in rows %}
-    <a href="{% url 'shelves:row' library.id shelf.id row.id %}">Row {{ row.number }}</a>
+    <a class="button" href="{% url 'shelves:row' library.id shelf.id row.id %}">Row {{ row.number }}</a>
 {% endfor %}
 </nav>
 
@@ -23,14 +23,14 @@
 <section class="shelf-gallery js-flickity">
 {% for book in books %}
     <div class="shelf-cell">
-        <img class="shelf" height="720" width="480" src="{% static 'shelves/images/book-cover-temp.jpg' %}" alt="An image of a shelf"/>
+        <img class="shelf" height="720" width="480" src="{% static 'shelves/images/book-cover-temp.jpg' %}" alt="An image of a book"/>
         <p class="book-details">{{ book.title }}</p>
     </div>
 {% endfor %}
 </section>
 
 <div class="qr-container">
-    test
+    <img height="300" width="300" src="{% static 'shelves/images/qrs/qr.png' %}" alt="A qr code leading to this url"/>
 </div>
 
 <script src="{% static 'shelves/js/flickity.pkgd.min.js' %}"></script>
